@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
-import styles from './components/styles'
-
+import Txtinput from './components/Txtinput'
+import CustomComponent from './components/CustomComponent'
 const App = () => {
   return (
-    <View style={styles.container}>
-      <text style={styles.title}>React native</text>
+    <View>
+      {/* <Txtinput/> */}
+      <CustomComponent/>
     </View>
   )
 }
