@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Information from './components/Information'
+import styles from './components/styles'
 
 const App = () => {
   return (
-    <View>
-      <Information/>
+    <View style={styles.container}>
+      <text style={styles.title}>React native</text>
     </View>
   )
 }
