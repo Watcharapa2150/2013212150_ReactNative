@@ -1,13 +1,18 @@
-import { View, Text,StyleSheet } from "react-native";
+import { View, Text,StyleSheet,SafeAreaView} from "react-native";
 import React from "react";
 
 const SecondPage = ({ route }) => {
   const { post } = route.params;
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={{flex:1}}>
+        <View style={styles.container}>
       <Text style={styles.heading}>Thai-Nichi Institute of Technology</Text>
-      <Text style={styles.textStyle}>Valued passed from FirstPage: {post}</Text>
-    </View>
+      <Text style={styles.textStyle}>Valued passed from First Page: {post}</Text>
+      </View>
+      <View style={styles.footer}>
+        <Text style={styles.textStyle}>www.tni.ac.th</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 
@@ -35,5 +40,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
 
     marginVertical: 10,
+  },
+  footer: {
+    justifyContent: "flex-end",
   },
 });
