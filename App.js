@@ -1,46 +1,58 @@
-import { View, StyleSheet, Text, SafeAreaView } from "react-native";
+import { View, Text, Button } from "react-native";
 import React from "react";
-import Txtinput from "./components/Txtinput";
-import CustomComponent from "./components/CustomComponent";
-import Logo from "./components/Logo";
-import LotsOgGreeting from "./components/LotsOgGreeting";
-import MyCustomTextWith from "./components/MyCustomTextWith";
-import Count from "./components/Count";
-import TxtInput2 from "./components/TxtInput2";
-import UserNamePassword from "./components/UserNamePassword";
-import AlertExample from "./components/AlertExample";
-import ImageWithTextInput from "./components/ImageWithTextInput";
-import ButtonExample from "./components/ButtonExample";
-import Touchable_Example from "./components/Touchable_Example";
-import TouchablePractice from "./components/TouchablePractice";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeScreen from "./screens/HomeScreen";
+import AboutScreen from "./screens/AboutScreen";
+import HomePost from "./screens/HomePost";
+import CreatPost from "./screens/CreatPost";
+import FirstPage from "./screens/FirstPage";
+import SecondPage from "./screens/SecondPage";
+
+// function HomeScreen({ navigation }) {
+//   return (
+//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+//       <Text>HomeScreen</Text>
+//       <Button
+//         title="เกี่ยวกับเรา"
+//         onPress={() => navigation.navigate("About")}
+//       />
+//     </View>
+//   );
+// }
+
+// function AboutScreen() {
+//   return (
+//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+//       <Text>AboutScreen</Text>
+//     </View>
+//   );
+// }
+
+const Stack = createNativeStackNavigator();
+
 const App = () => {
   return (
-    <SafeAreaView>
-      <View>
-        {/* <Txtinput/> */}
-        {/*<CustomComponent/>*/}
-        {/*<Logo/>*/}
-        {/*<LotsOgGreeting/>*/}
-        {/*<MyCustomTextWith/>*/}
-        {/* <Count num={2} title='click'/> */}
-        {/*<TxtInput2/>*/}
-        {/* <UserNamePassword/> */}
-        {/* <AlertExample /> */}
-        {/* <ImageWithTextInput/> */}
-        {/* <ButtonExample/> */}
-        {/* <Touchable_Example/> */}
-        <TouchablePractice/>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator 
+      initialRouteName="Home"
+      screenOptions={{
+        headerStyle:{
+          backgroundColor : '#e6e6fa'
+        },
+        headerTintColor : '#4b0082',
+        headerTintStyle :{
+          fontWeight : 'bold'
+        }
+      }}
+      >
+        {/* <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="About" component={AboutScreen} /> */}
+        <Stack.Screen name="FirstPage" component={FirstPage} />
+        <Stack.Screen name="SecondPage" component={SecondPage} /> 
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
 export default App;
-
-// const style = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: "center",
-//     alignItems: "center",
-//   },
-// });
