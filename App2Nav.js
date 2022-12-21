@@ -6,9 +6,8 @@ import HomeScreen from "./screens/HomeScreen";
 import AboutScreen from "./screens/AboutScreen";
 import HomePost from "./screens/HomePost";
 import CreatPost from "./screens/CreatPost";
-import FirstPage from "./pages/FirstPage";
-import SecondPage from "./pages/SecondPage";
-import ThirdPage from "./pages/ThirdPage";
+import FirstPage from "./screens/FirstPage";
+import SecondPage from "./screens/SecondPage";
 
 // function HomeScreen({ navigation }) {
 //   return (
@@ -51,10 +50,8 @@ const App = () => {
         <Stack.Screen name="About" component={AboutScreen} /> */}
         <Stack.Screen name="FirstPage" component={FirstPage} />
         <Stack.Screen name="SecondPage" component={SecondPage} /> 
-        <Stack.Screen name="ThirdPage" component={ThirdPage} /> 
       </Stack.Navigator>
     </NavigationContainer>
-    // <FirstPage/>
   );
 };
 
