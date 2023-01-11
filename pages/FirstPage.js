@@ -16,9 +16,11 @@ import {
         <View style={styles.container}>
           {/* <Text style={styles.heading}>Thai-Nichi Institute of Technology</Text> */}
           <Text style={styles.textTopStyle}>
-            This is First Page
+            This is the First Page under
           </Text>
-          
+          <Text style={styles.textTopStyle}>
+            First Page option
+          </Text>
           <Button
             title="Go to Second Page"
             onPress={() => navigation.navigate("SecondPage", { post: postText })}
@@ -29,7 +31,7 @@ import {
           />
         </View>
         <View style={{justifyContent:'flex-end'}}>
-          <Text style={styles.textBottomStyle}>Thai-Nichi Institute of Technology</Text>
+          <Text style={styles.textBottomStyle}>React Native Drawer create by: Watcharapa</Text>
         </View>
       </SafeAreaView>
     );

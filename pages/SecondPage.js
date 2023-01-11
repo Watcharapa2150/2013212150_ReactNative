@@ -15,7 +15,11 @@ const SecondPage = ({ navigation }) => {
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
         {/* <Text style={styles.heading}>Thai-Nichi Institute of Technology</Text> */}
-        <Text style={styles.textTopStyle}>This is First Page</Text>
+        <Text style={styles.textTopStyle}>
+            This is the Second Page under
+          </Text>
+          <Text style={styles.textTopStyle}>
+            Second Page option</Text>
 
         <Button
           title="Go to First Page"
@@ -27,7 +31,7 @@ const SecondPage = ({ navigation }) => {
         />
       </View>
       <View style={{justifyContent:'flex-end'}}>
-        <Text style={styles.textBottomStyle}>Thai-Nichi Institute of Technology</Text>
+        <Text style={styles.textBottomStyle}>React Native Drawer create by: Watcharapa</Text>
       </View>
     </SafeAreaView>
   );
