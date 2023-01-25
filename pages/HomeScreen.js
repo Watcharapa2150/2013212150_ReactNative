@@ -8,6 +8,7 @@ import {
   HiddenItem,
   OverflowMenu,
 } from "react-navigation-header-buttons";
+import { Button } from "react-native-web";
 const IoniconsHeaderButton = (props) => (
   // the `props` here come from <Item ... />
   // you may access them and pass something else to `HeaderButton` if you like
@@ -37,8 +38,9 @@ const HomeScreen = ({ navigation }) => {
   }, [navigation]);
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Entypo name="home" size={30} color="blue" />
+      <Entypo name="home" size={30} color="glay" />
       <Text>Home Screen</Text>
+      <Button title='go to about'/>
     </View>
   );
 };
