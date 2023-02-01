@@ -10,19 +10,42 @@ import {
 } from "@react-navigation/drawer";
 import HomeScreen from "./pages/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import DetailScreen from "./screens/DetailScreen";
 
 function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props}>
-      <View style={{justifyContent:"center",alignItems:"center",flex:1}}>
-      <FontAwesome5 name="react" size={80} color='blue'/></View>
+      <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
+        <FontAwesome5 name="react" size={80} color="blue" />
+      </View>
       <DrawerItemList {...props} />
       <DrawerItem
         label="Close Drawer"
         onPress={() => props.navigation.closeDrawer()}
       />
-      
     </DrawerContentScrollView>
+  );
+}
+
+const Stack = createNativeStackNavigator();
+
+function ProductStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#0096DA",
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
+      }}
+    >
+      <Stack.Screen name="Product" component={ProductScreen} />
+      <Stack.Screen name="Detail" component={DetailScreen} />
+    </Stack.Navigator>
   );
 }
 const Drawer = createDrawerNavigator();
@@ -39,8 +62,7 @@ function MyDrawer() {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
       <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="Product" component={ProductScreen} />
-      
+      <Drawer.Screen name="Product" component={ProductStack} />
     </Drawer.Navigator>
   );
 }
